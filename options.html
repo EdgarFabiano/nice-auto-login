@@ -2,10 +2,10 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" href="button.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="input.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 
 <body>
@@ -27,8 +27,11 @@
             </h2>
           </div>
 
-          <div id="sucesso" style="display: none;" class="alert alert-success">
-            Parametros salvos com sucesso!
+          <div id="sucesso" style="display: none;" class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="display-flex cursor-default">
+              <span class="flex1">Parametros salvos com sucesso!</span>
+              <span aria-hidden="true">&times;</span>
+            </div>
           </div>
 
           <div class="mb-3">

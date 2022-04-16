@@ -70,6 +70,18 @@ body {
     display: block;
 }
 
+.display-flex {
+    display: flex;
+}
+
+.flex1 {
+    flex-grow: 1;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
 .text-white {
     color: var(--color-neutral-0);
 }

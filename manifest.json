@@ -8,12 +8,20 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.vitreo.local/*", "<all_urls>"],
-      "js": ["contenscript.js"],
+      "matches": [
+        "*://*.vitreo.local/*"
+      ],
+      "js": [
+        "contenscript.js"
+      ],
       "run_at": "document_end"
     }
   ],
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
   "action": {
     "default_popup": "options.html",
     "default_icon": {
@@ -29,5 +37,12 @@
     "48": "/images/logo48.png",
     "128": "/images/logo128.png"
   },
-  "options_page": "options.html"
+  "options_page": "options.html",
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      }
+    }
+  }
 }

@@ -6,17 +6,21 @@ let senhaInput = document.getElementById("senha");
 let devInput = document.getElementById("dev");
 let devCheck = document.getElementById("devCheck");
 devCheck.addEventListener("click", (evt) => onCheckboxChange(evt, devInput));
+
 let hmlInput = document.getElementById("hml");
 let hmlCheck = document.getElementById("hmlCheck");
 hmlCheck.addEventListener("click", (evt) => onCheckboxChange(evt, hmlInput));
+
 let stgInput = document.getElementById("stg");
 let stgCheck = document.getElementById("stgCheck");
 stgCheck.addEventListener("click", (evt) => onCheckboxChange(evt, stgInput));
+
 let prdInput = document.getElementById("prd");
 let prdCheck = document.getElementById("prdCheck");
 prdCheck.addEventListener("click", (evt) => onCheckboxChange(evt, prdInput));
 
 let sucessContainer = document.getElementById("sucesso");
+sucessContainer.addEventListener('click', () => sucessContainer.style.display = "none");
 
 function onCheckboxChange(evt, input) {
   atualizaStatusInput(evt.currentTarget.checked, input);

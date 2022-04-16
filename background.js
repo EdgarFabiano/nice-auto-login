@@ -15,4 +15,17 @@ chrome.runtime.onInstalled.addListener(() => {
   };
   chrome.storage.sync.set({ parametros });
   chrome.storage.sync.set({ sucesso: false });
+  chrome.tabs.create({url:"options.html"});
+
 });
+
+function notifyChange() {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {message: "check-url"});
+  });
+}
+
+chrome.tabs.onUpdated.addListener(() => notifyChange())
+
+chrome.tabs.onActivated.addListener(() => notifyChange())
+
