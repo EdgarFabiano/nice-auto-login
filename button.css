@@ -1,0 +1,24 @@
+
+.btn {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: var(--border-radius-soft);
+  cursor: pointer;
+  display: -ms-inline-flexbox;
+  filter: brightness(1);
+  font-weight: var(--font-semi-bold);
+  height: 40px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  padding: var(--space-none) var(--space-base);
+}
+
+.btn.btn-primary {
+  background-color: var(--color-primary);
+  border: var(--border-size-s) solid var(--color-primary);
+  color: var(--color-neutral-0);
+}

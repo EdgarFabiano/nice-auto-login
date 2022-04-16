@@ -1,0 +1,85 @@
+:root {
+    --color-primary: #0052cc;
+    --color-neutral-0: #ffffff;
+    --color-neutral-5: #A8B2BF;
+    --color-neutral-7: #6a7178;
+    --color-neutral-9: #272b30;
+    --color-green-lighter: #afe0b8;
+    --color-green-darkest: #1e622a;
+
+    --border-radius-soft: 8px;
+
+    --border-size-s: 1px;
+    
+    --shadow-l: 0 6px 8px rgba(0, 0, 0, 0.1);
+
+    --space-none: 0;
+    --space-base: 16px;
+    --space-m: 24px;
+    --space-l: 32px;
+    --space-xxl: 48px;
+
+    --font-size-s: 14px;
+
+    --font-semi-bold: 600;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.main-content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+}
+
+.login-screen {
+    -webkit-box-align: center; 
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-form {
+    background-color: var(--color-neutral-0);
+    border-radius: var(--border-radius-soft);
+    -webkit-box-shadow: var(--shadow-l);
+    box-shadow: var(--shadow-l);
+    min-width: 435px;
+    padding: var(--space-l) var(--space-xxl);
+    z-index: 2;
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+.display-block {
+    display: block;
+}
+
+.text-white {
+    color: var(--color-neutral-0);
+}
+
+.color-neutral-7 {
+    color: var(--color-neutral-7);
+}
+
+@media only screen and (max-height: 600px) {
+    .hide-on-popup {
+        display: none;
+    }
+  }

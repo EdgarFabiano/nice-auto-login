@@ -1,0 +1,33 @@
+{
+  "name": "Nice auto login",
+  "description": "Faz o login automaticamente no Nice de acordo com os parâmetros configurados.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.vitreo.local/*", "<all_urls>"],
+      "js": ["contenscript.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+      "16": "/images/logo16.png",
+      "32": "/images/logo32.png",
+      "48": "/images/logo48.png",
+      "128": "/images/logo128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/logo16.png",
+    "32": "/images/logo32.png",
+    "48": "/images/logo48.png",
+    "128": "/images/logo128.png"
+  },
+  "options_page": "options.html"
+}

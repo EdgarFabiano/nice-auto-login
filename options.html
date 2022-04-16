@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="button.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="input.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="main-content">
+    <div class="login-screen">
+
+      <div class="display-block m-4">
+
+        <div class="text-center hide-on-popup">
+          <img data-image src="/images/nice_dtvm_logo_white.svg" class="mb-4">
+        </div>
+
+        <form method="post" class="login-form">
+
+          <div class="mb-1 text-center">
+            <h2 class="color-neutral-7">
+              Auto-Login
+            </h2>
+          </div>
+
+          <div id="sucesso" style="display: none;" class="alert alert-success">
+            Parametros salvos com sucesso!
+          </div>
+
+          <div class="mb-3">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" required class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" required class="form-control">
+          </div>
+
+          <span>Aplicar a</span><br>
+
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              <input class="form-check-input" type="checkbox" id="devCheck">
+            </div>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon-dev">DEV</span>
+            </div>
+            <input type="text" id="dev" class="form-control" aria-describedby="basic-addon-dev">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              <input class="form-check-input" type="checkbox" id="hmlCheck">
+            </div>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon-hml">HML</span>
+            </div>
+            <input type="input" id="hml" class="form-control" aria-describedby="basic-addon-hml">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-text">
+              <input class="form-check-input" type="checkbox" id="stgCheck">
+            </div>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon-stg">STG</span>
+            </div>
+            <input type="input" id="stg" class="form-control" aria-describedby="basic-addon-stg">
+          </div>
+
+          <div class="input-group mb-4">
+            <div class="input-group-text">
+              <input class="form-check-input" type="checkbox" id="prdCheck">
+            </div>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon-prd">PRD</span>
+            </div>
+            <input type="input" id="prd" class="form-control" aria-describedby="basic-addon-prd">
+          </div>
+
+          <button id="salvarBtn" class="btn btn-primary full-width">Salvar</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="options.js"></script>
+
+</html>
