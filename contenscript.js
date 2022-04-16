@@ -12,7 +12,10 @@ function getDomain(url) {
 
 function setParametersAndLogUserIn(usuario, senha) {
   let usuarioInput = document.getElementById("Input_Username");
+  if (usuarioInput == null || usuarioInput == undefined) usuarioInput = document.getElementById("Input_UsernameVal");
+
   let senhaInput = document.getElementById("Input_Password");
+  if (senhaInput == null || senhaInput == undefined) senhaInput = document.getElementById("Input_PasswordVal");
   let loginBtn = document.getElementsByClassName("btn btn-primary")[0];
 
   usuarioInput.value = usuario;
@@ -33,7 +36,9 @@ function checkURL() {
                 (data.parametros.isHml && window.location.href.includes(getDomain(data.parametros.hml))) ||
                 (data.parametros.isStg && window.location.href.includes(getDomain(data.parametros.stg))) ||
                 (data.parametros.isPrd && window.location.href.includes(getDomain(data.parametros.prd)))) {
-                setParametersAndLogUserIn(data.parametros.usuario, data.parametros.senha);
+                  if (data.parametros.usuario !== '' && data.parametros.senha !== '') {                    
+                    setParametersAndLogUserIn(data.parametros.usuario, data.parametros.senha);
+                  }
             }
           }
 
