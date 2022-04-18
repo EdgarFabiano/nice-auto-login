@@ -8,7 +8,7 @@ chrome.runtime.onInstalled.addListener(() => {
     isDev: true,
     hml: "https://h-outsystems.vitreo.local/",
     isHml: true,
-    stg: "https://stag-nice-dtvm.vitreo.local/",
+    stg: "https://vtr-dtvm-stg-outsystem.vitreo.local/",
     isStg: true,
     prd: "https://nice-dtvm.vitreo.local/",
     isPrd: true
