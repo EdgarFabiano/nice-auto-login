@@ -1,5 +1,5 @@
 chrome.runtime.onMessage.addListener(
-  function(request) {
+  function (request) {
     if (request.message === "check-url") {
       checkURL();
     }
@@ -18,35 +18,41 @@ function setParametersAndLogUserIn(usuario, senha) {
   if (senhaInput == null || senhaInput == undefined) senhaInput = document.getElementById("Input_PasswordVal");
   let loginBtn = document.getElementsByClassName("btn btn-primary")[0];
 
+  var event = new Event('input', { bubbles: true });
   usuarioInput.value = usuario;
+  usuarioInput.dispatchEvent(event);
+  
   senhaInput.value = senha;
+  senhaInput.dispatchEvent(event);
+
   console.log("Attempting to login user: " + usuario);
   loginBtn.click();
+
 }
 
 function checkURL() {
 
-    if (window.location.pathname.endsWith("/Login")) {
+  if (window.location.pathname.toLowerCase().endsWith("/login")) {
 
-      chrome.storage.sync.get("parametros", (data) => {
-        if (data !== null && data !== undefined) {
-          if (data.parametros !== null && data.parametros !== undefined) {
-            
-            if ((data.parametros.isDev && window.location.href.includes(getDomain(data.parametros.dev))) ||
-                (data.parametros.isHml && window.location.href.includes(getDomain(data.parametros.hml))) ||
-                (data.parametros.isStg && window.location.href.includes(getDomain(data.parametros.stg))) ||
-                (data.parametros.isPrd && window.location.href.includes(getDomain(data.parametros.prd)))) {
-                  if (data.parametros.usuario !== '' && data.parametros.senha !== '') {                    
-                    setParametersAndLogUserIn(data.parametros.usuario, data.parametros.senha);
-                  }
+    chrome.storage.sync.get("parametros", (data) => {
+      if (data !== null && data !== undefined) {
+        if (data.parametros !== null && data.parametros !== undefined) {
+
+          if ((data.parametros.isDev && window.location.href.includes(getDomain(data.parametros.dev))) ||
+            (data.parametros.isHml && window.location.href.includes(getDomain(data.parametros.hml))) ||
+            (data.parametros.isStg && window.location.href.includes(getDomain(data.parametros.stg))) ||
+            (data.parametros.isPrd && window.location.href.includes(getDomain(data.parametros.prd)))) {
+            if (data.parametros.usuario !== '' && data.parametros.senha !== '') {
+              setParametersAndLogUserIn(data.parametros.usuario, data.parametros.senha);
             }
           }
-
         }
-      });
 
-    }
-    
+      }
+    });
+
+  }
+
 }
-  
+
 checkURL();
